@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , viewport-fit=cover">
+    <title>Panel de calculo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Panel de cálculo</h1>
+        <p>Tres utilidades rápidas : propina, indice de masa corporal, y conversaciones de uso diario.</p>
+    </header>
+
+    <div class="grid">
+        <section class="card">
+            <span class="num">01</span>
+            <h2>Calculadora de propina</h2>
+
+            <div class="field">
+                <label for="montoCuenta">Monto de la cuenta</label>
+                <input type="number" id="montoCuenta" placeholder="0.00" step="0.01" min="0"> 
+            </div>
+
+            <div class="field">
+                <label for="porcentajePropina">Porcentaje de la propina</label>
+                <input type="number" id="porcentajePropina" placeholder="15" step="1" min="0"> 
+            </div>
+
+            <button onclick="calcularPropina()">Calcular propina</button>
+
+            <div id="resultadoPropina" class="result empty">El resultado aparecerá aquí.</div>
+        </section>
+
+        <section class="card">
+            <span class="num">02</span>
+            <h2>Clasificador de IMC</h2>
+
+            <div field>
+                <label for="pesoKg">Peso (Kg)</label>
+                <input type="number" id="pesoKg" placeholder="70" step="0.1" min="0">
+            </div>
+
+            <div field>
+                <label for="alturaM">Altura (m)</label>
+                <input type="number" id="alturaM" placeholder="1.75" step="0.01" min="0">
+            </div>
+
+            <button onclick="calcularIMC()">Calcular IMC</button>
+
+            <div id="resultadoIMC" class="result empty">El resultado aparecerá aquí.</div>
+        </section>
+
+         <section class="card">
+      <span class="num">03</span>
+      <h2>Menú de utilidades</h2>
+ 
+      <div class="field">
+        <label for="menuOpcion">Elige una opción</label>
+        <select id="menuOpcion" onchange="mostrarSubmenu()">
+          <option value="">— Selecciona —</option>
+          <option value="1">1) Celsius → Fahrenheit</option>
+          <option value="2">2) Precio con IVA</option>
+          <option value="3">3) Nota (0–100) → Letra</option>
+        </select>
+      </div>
+ 
+    
+ 
+      <!-- Submenú 1 -->
+      <div id="submenu1" class="submenu">
+        <div class="field">
+          <label for="celsius">Temperatura (°C)</label>
+          <input type="number" id="celsius" placeholder="25" step="0.1">
+        </div>
+        <button onclick="convertirCelsius()">Convertir</button>
+      </div>
+ 
+      <!-- Submenú 2 -->
+      <div id="submenu2" class="submenu">
+        <div class="field">
+          <label for="precioBase">Precio</label>
+          <input type="number" id="precioBase" placeholder="100.00" step="0.01" min="0">
+        </div>
+        <div class="field">
+          <label for="ivaPorcentaje">IVA (%)</label>
+          <input type="number" id="ivaPorcentaje" placeholder="19" step="0.1" min="0">
+        </div>
+        <button onclick="calcularIVA()">Calcular precio final</button>
+      </div>
+ 
+      <!-- Submenú 3 -->
+      <div id="submenu3" class="submenu">
+        <div class="field">
+          <label for="notaNumero">Nota (0–100)</label>
+          <input type="number" id="notaNumero" placeholder="85" min="0" max="100" step="1">
+        </div>
+        <button onclick="clasificarNota()">Clasificar</button>
+      </div>
+ 
+      <div id="resultadoMenu" class="result empty">El resultado aparecerá aquí.</div>
+    </section>
+ 
+  </div>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+ 
+ 
